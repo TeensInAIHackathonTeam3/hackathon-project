@@ -18,15 +18,49 @@ posts= [
 ]
 
 @app.route('/')
-@app.route("/home")
+@app.route('/home')
 def home():
-    return("<h1>EDU-C8</h1><p> Hi there!</p>")
-    #return render_template('home.html', posts=posts)
-
-
+    return render_template('welcome_screen.html')
+    
 @app.route('/about')
 def about():
     return render_template('about.html', title='About')
+
+@app.route('/login')
+def login():
+    return('Sign in')
+
+@app.route('/signup')
+def signup():
+    return('Teacher, student, or uni student?')
+
+@app.route('/studentsignup')
+def studentsignup():
+    return('Student Signup')
+
+@app.route('/teachersignup')
+def teachersignup():
+    return('Teacher Signup')
+
+@app.route('/unistudentsignup')
+def unistudentsignup():
+    return('Uni Student Signup')
+
+@app.route('/studentverify')
+def studentverify():
+    return('Email Verified')
+
+@app.route('/teacherverify')
+def studentverify():
+    return('Email Verified')
+
+@app.route('/studenthome')
+def studenthome():
+    return('Student Homepage')
+
+@app.route('/teacherhome')
+def teacherhome():
+    return('Teacher Homepage')
 
 if __name__ == '__main__':
     app.run()
