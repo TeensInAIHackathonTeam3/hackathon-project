@@ -3,3 +3,4 @@ app = Flask(__name__)
 @app.route("/")
 def homepage():
     return("Placeholder homepage text")
+app.run()
