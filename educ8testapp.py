@@ -2,19 +2,13 @@ from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 
-posts= [
+teachersaccepted= [
     {
-        'author': 'Pralish Satyal', 
-        'title' : 'Blog post 1',
-        'content': 'First post content',
-        'date_posted':'April 20, 2018'
-    },
-    {
-        'author': 'Jane Doe', 
-        'title' : 'Blog post 12',
-        'content': 'Second post content',
-        'date_posted':'April 21, 2018'   
-    }    
+        'name': 'Ahmed Kingston', 
+        'subject' : 'GCSE chemistry',
+        'timezone': 'BST',
+        'language':'English'
+    }   
 ]
 
 @app.route('/')
@@ -56,7 +50,7 @@ def studentverify():
 
 @app.route('/studenthome')
 def studenthome():
-    return('Student Homepage')
+    return render_template('studenthome.html')
 
 @app.route('/teacherhome')
 def teacherhome():
