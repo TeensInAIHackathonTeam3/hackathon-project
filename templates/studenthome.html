@@ -6,7 +6,12 @@
 <body>
 <h1> EDU-C8 For Students</h1>
 <h1> Student Homepage </h1>
+<h2> Teachers who've accepted your requests </h2>
 {% for teacher in teachersaccepted %}
+<h3>{{ teacher.name }}</h3>
+<p>{{ teacher.subject }}</p>
+<p>{{ teacher.timezone }} </p>
+<p> {{ teacher.language }} </p>
 {% endfor %}
 </body>
 </html>

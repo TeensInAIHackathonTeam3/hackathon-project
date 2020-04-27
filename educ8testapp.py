@@ -45,12 +45,12 @@ def studentverify():
     return('Email Verified')
 
 @app.route('/teacherverify')
-def studentverify():
+def teacherverify():
     return('Email Verified')
 
 @app.route('/studenthome')
 def studenthome():
-    return render_template('studenthome.html')
+    return render_template('studenthome.html', teachersaccepted = teachersaccepted)
 
 @app.route('/teacherhome')
 def teacherhome():
