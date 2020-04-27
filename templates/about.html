@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-{% if title %}
-<title>EDU-C8 - {{ title }}</title>
-{% else %}
-<title>EDU-C8</title>
-{% endif %}
-</head>
-<body>
-<h1> EDU-C8 </h1>
-<h1> About Page </h1>
-</body>
-</html>
+{% extends "layout2.html" %}
+{% block content %}
+	<h1> EDU-C8 </h1>
+	<h1> About Page </h1>
+{% endblock content %}
