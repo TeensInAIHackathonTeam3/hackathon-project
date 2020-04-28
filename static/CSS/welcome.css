@@ -18,3 +18,12 @@ body {
   line-height: 143px;
   text-align: center;
 }
+
+a {
+  color: #FFFFFF;
+  font-family: Lato;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px;
+  text-align: left;
+}

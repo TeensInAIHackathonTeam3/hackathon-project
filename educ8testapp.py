@@ -92,29 +92,29 @@ def teachersignup():
 
 
 
-@app.route('/unistudentsignup',  methods=['GET', 'POST'])
-def unistudentsignup():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        if User.query.filter(db.or_(User.username==form.username.data, User.email==form.email.data)).first():
-            #flash('Account already exists!', 'danger')
-            return render_template('register.html', title='Register',form=form)
-    
-        theuser=User(username=form.username.data, password=form.password.data, email=form.email.data)
-        db.session.add(theuser)
-        db.session.commit()
-        #flash(f'Account created for {form.username.data}!', 'success')
-        return redirect(url_for('unistudentverify'))
-    return render_template('register.html', title='Register', form=form)
+##@app.route('/unistudentsignup',  methods=['GET', 'POST'])
+##def unistudentsignup():
+##    form = RegistrationForm()
+##    if form.validate_on_submit():
+##        if User.query.filter(db.or_(User.username==form.username.data, User.email==form.email.data)).first():
+##            #flash('Account already exists!', 'danger')
+##            return render_template('register.html', title='Register',form=form)
+##    
+##        theuser=User(username=form.username.data, password=form.password.data, email=form.email.data)
+##        db.session.add(theuser)
+##        db.session.commit()
+##        #flash(f'Account created for {form.username.data}!', 'success')
+##        return redirect(url_for('unistudentverify'))
+##    return render_template('register.html', title='Register', form=form)
 
 
 @app.route('/studentverify')
 def studentverify():
     return('Email Verified')
 
-@app.route('/unistudentverify')
-def unistudentverify():
-    return('Email Verified')
+##@app.route('/unistudentverify')
+##def unistudentverify():
+##    return('Email Verified')
 
 @app.route('/teacherverify')
 def teacherverify():
