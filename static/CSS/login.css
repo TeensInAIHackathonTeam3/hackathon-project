@@ -10,3 +10,11 @@ body {
   line-height: 78px;
   text-align: left;
 }
+.loginheading {
+	color: #FFFFFF;
+  font-family: Lato;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 65px;
+  text-align: center;
+}
