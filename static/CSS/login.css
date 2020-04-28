@@ -11,10 +11,16 @@ body {
   text-align: left;
 }
 .loginheading {
-	color: #FFFFFF;
+  color: #FFFFFF;
   font-family: Lato;
   font-size: 50px;
   font-weight: 700;
   line-height: 65px;
   text-align: center;
 }
+
+input.form-control {
+	width: 27vw;
+	height: 3vw;
+}
+	
