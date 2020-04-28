@@ -51,7 +51,7 @@ def login():
         if User.query.filter(db.and_(User.email==form.email.data, User.password==form.password.data)).first():
             #flash('You have been logged in!', 'success')
             return redirect(url_for('studenthome'))
-        else:
+        #else:
             #flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
