@@ -19,8 +19,14 @@ body {
   text-align: center;
 }
 
+.form-group {
+	text-align: center;
+}
+
 input.form-control {
 	width: 27vw;
 	height: 3vw;
+	display: inline-block;
 }
+
 	
