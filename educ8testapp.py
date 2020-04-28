@@ -55,9 +55,7 @@ def login():
             #flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
-@app.route('/signup')
-def signup():
-    return("Student, teacher or uni student?")
+
 
 @app.route('/studentsignup', methods=['GET', 'POST'])
 def studentsignup():
