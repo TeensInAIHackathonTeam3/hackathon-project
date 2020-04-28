@@ -49,10 +49,10 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         if User.query.filter(db.and_(User.email==form.email.data, User.password==form.password.data)).first():
-            flash('You have been logged in!', 'success')
+            #flash('You have been logged in!', 'success')
             return redirect(url_for('studenthome'))
         else:
-            flash('Login Unsuccessful. Please check username and password', 'danger')
+            #flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
 @app.route('/signup')
@@ -70,7 +70,7 @@ def studentsignup():
         theuser=User(username=form.username.data, password=form.password.data, email=form.email.data)
         db.session.add(theuser)
         db.session.commit()
-        flash(f'Account created for {form.username.data}!', 'success')
+        #flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('studentverify'))
     return render_template('register.html', title='Register', form=form)
 
@@ -80,13 +80,13 @@ def teachersignup():
     form = RegistrationForm()
     if form.validate_on_submit():
         if User.query.filter(db.or_(User.username==form.username.data, User.email==form.email.data)).first():
-            flash('Account already exists!', 'danger')
+            #flash('Account already exists!', 'danger')
             return render_template('register.html', title='Register',form=form)
     
         theuser=User(username=form.username.data, password=form.password.data, email=form.email.data)
         db.session.add(theuser)
         db.session.commit()
-        flash(f'Account created for {form.username.data}!', 'success')
+        #flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('teacherverify'))
     return render_template('register.html', title='Register', form=form)
 
@@ -97,13 +97,13 @@ def unistudentsignup():
     form = RegistrationForm()
     if form.validate_on_submit():
         if User.query.filter(db.or_(User.username==form.username.data, User.email==form.email.data)).first():
-            flash('Account already exists!', 'danger')
+            #flash('Account already exists!', 'danger')
             return render_template('register.html', title='Register',form=form)
     
         theuser=User(username=form.username.data, password=form.password.data, email=form.email.data)
         db.session.add(theuser)
         db.session.commit()
-        flash(f'Account created for {form.username.data}!', 'success')
+        #flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('unistudentverify'))
     return render_template('register.html', title='Register', form=form)
 
