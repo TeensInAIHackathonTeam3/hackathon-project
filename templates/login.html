@@ -46,7 +46,8 @@
     </div>
     <div class="border-top pt-3">
         <small class="text-muted">
-            Need An Account? <a class="ml-2" href="{{ url_for('signup') }}">Sign Up Now</a>
+            Need An Account? If you're a student, click here <a class="ml-2" href="{{ url_for('studentsignup') }}">Student</a>
+            If you're a teacher click here <a class="ml-2" href="{{url_for('teachersignup')}}">Teacher</a>
         </small>
     </div>
 {% endblock content %}
