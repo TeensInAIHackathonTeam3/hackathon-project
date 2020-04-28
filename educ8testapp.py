@@ -13,10 +13,17 @@ class User(db.Model):
     username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
-    posts = db.relationship('Post', backref='author', lazy=True)
+    
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}')"
+
+class TeacherInfo(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    subject = db.Column(db.String(100), nullable=False)
+    timezone = db.Column(db.String(10), nullable=False)
+    language = db.Column(db.String(100), nullable=False)
 
 
 teachersaccepted= [
@@ -41,7 +48,7 @@ def about():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.email.data == 'admin@project.com' and form.password.data == 'password':
+        if User.query.filter(db.and_(User.email==form.email.data, User.password==form.password.data)).first():
             flash('You have been logged in!', 'success')
             return redirect(url_for('studenthome'))
         else:
@@ -56,6 +63,13 @@ def signup():
 def studentsignup():
     form = RegistrationForm()
     if form.validate_on_submit():
+        if User.query.filter(db.or_(User.username==form.username.data, User.email==form.email.data)).first():
+            flash('Account already exists!', 'danger')
+            return render_template('register.html', title='Register',form=form)
+    
+        theuser=User(username=form.username.data, password=form.password.data, email=form.email.data)
+        db.session.add(theuser)
+        db.session.commit()
         flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('studentverify'))
     return render_template('register.html', title='Register', form=form)
@@ -65,18 +79,34 @@ def studentsignup():
 def teachersignup():
     form = RegistrationForm()
     if form.validate_on_submit():
+        if User.query.filter(db.or_(User.username==form.username.data, User.email==form.email.data)).first():
+            flash('Account already exists!', 'danger')
+            return render_template('register.html', title='Register',form=form)
+    
+        theuser=User(username=form.username.data, password=form.password.data, email=form.email.data)
+        db.session.add(theuser)
+        db.session.commit()
         flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('teacherverify'))
     return render_template('register.html', title='Register', form=form)
+
 
 
 @app.route('/unistudentsignup',  methods=['GET', 'POST'])
 def unistudentsignup():
     form = RegistrationForm()
     if form.validate_on_submit():
+        if User.query.filter(db.or_(User.username==form.username.data, User.email==form.email.data)).first():
+            flash('Account already exists!', 'danger')
+            return render_template('register.html', title='Register',form=form)
+    
+        theuser=User(username=form.username.data, password=form.password.data, email=form.email.data)
+        db.session.add(theuser)
+        db.session.commit()
         flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('unistudentverify'))
     return render_template('register.html', title='Register', form=form)
+
 
 @app.route('/studentverify')
 def studentverify():
