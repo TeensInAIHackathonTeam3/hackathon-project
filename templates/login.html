@@ -1,6 +1,9 @@
 {% extends "layout2.html" %}
 {% block content %}
- <h1> EDU-C8 </h1>
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+ <h1 class="companyname"> EDU-C8 </h1>
     <div class="content-section">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
