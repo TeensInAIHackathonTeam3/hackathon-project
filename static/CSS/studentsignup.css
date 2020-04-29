@@ -15,4 +15,13 @@ body {
 	background-color: #00A6FF;
 	color: #FFFFFF;
 }
+.form-group {
+	text-align: left;
+}
+
+input.form-control {
+	width: 27vw;
+	height: 3vw;
+	display: inline-block;
+}
 
