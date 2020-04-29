@@ -20,7 +20,7 @@ body {
 }
 
 .form-group {
-	text-align: center;
+	text-align: left;
 }
 
 input.form-control {
@@ -30,6 +30,9 @@ input.form-control {
 }
 
 .emaildiv {
-	padding-left: 2.5vw;
+	padding-left: 34vw;
 }
 	
+.pwdiv {
+	padding-left: 32.25vw;
+}
