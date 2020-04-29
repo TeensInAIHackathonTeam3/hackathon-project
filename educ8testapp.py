@@ -1,7 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
-from forms import RegistrationForm, LoginForm
+from forms import StudentRegistrationForm, TeacherRegistrationForm, LoginForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
@@ -12,10 +12,8 @@ db = SQLAlchemy(app)
 
 class TeacherInfo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-
     teacher_first_name = db.Column(db.String(100), nullable=False)
     teacher_last_name = db.Column(db.String(100), nullable=False)
-
     teacher_email=db.Column(db.String(100), unique=True, nullable=False)
     teacher_password=db.Column(db.String(60), nullable=False)
     teacher_subject = db.Column(db.String(120), nullable=False)
@@ -42,21 +40,6 @@ class StudentInfo(db.Model):
     
 
 
-#database structure for making a student account
-class StudentInfo(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    student_first_name = db.Column(db.String(20), nullable=False)
-    student_last_name= db.Column(db.String(100), unique=True, nullable=False)
-    student_email=db.Column(db.String(120), nullable=False)
-    student_password=db.Column(db.String(60), nullable=False)
-    student_subject = db.Column(db.String(100), nullable=False)
-    student_examBoard= db.Column(db.String(100), nullable=False)
-    student_timezone = db.Column(db.String(10), nullable=False)
-    student_language = db.Column(db.String(100), nullable=False)
-    
-    def __stud__(self):
-        return f"StudentInfo('{self.student_first_name}','{self.student_last_name}', '{self.student_email}','{self.student_password}','{self.student_subject}', '{self.student_examBoard}','{self.student_timezone}','{self.student_language}')"
-    
 teachersaccepted= [
     {
         'name': 'Ahmed Kingston', 
@@ -101,7 +84,7 @@ def studentsignup():
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('studentverify'))
-    return render_template('register.html', title='Sign Up', form=form, stylesheet= url_for('static', filename='css/studentsignup.css'))
+    return render_template('studentsignup.html', title='Sign Up', form=form)
 
 
 @app.route('/teachersignup', methods=['GET', 'POST'])
@@ -117,7 +100,7 @@ def teachersignup():
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('teacherverify'))
-    return render_template('signupteachers.html', title='Sign Up', form=form, stylesheet=url_for('static', filename='css/teachersignup.css'))
+    return render_template('teachersignup.html', title='Sign Up', form=form)
 
 
 

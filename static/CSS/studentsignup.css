@@ -17,6 +17,11 @@ body {
 }
 .form-group {
 	text-align: right;
+	
+}
+
+.formdiv {
+	padding-right: 34vw;
 }
 
 input.form-control {
@@ -25,16 +30,3 @@ input.form-control {
 	display: inline-block;
 }
 
-.unamediv {
-	padding-right: 34vw;
-}
-.emaildiv {
-	padding-right: 34vw;
-}
-	
-.pwdiv {
-	padding-right: 34vw;
-}
-.confirmdiv {
-	padding-right: 34vw;
-}
