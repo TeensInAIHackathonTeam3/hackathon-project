@@ -5,7 +5,9 @@
 {% block content %}
 	<h1 class="companyname"> EDU-C8 </h1>
 	<h1 class="welcometext"> Hi there! </h1>
+	<div class = "links">
 	<a href="{{ url_for('login')}}"> Login </a>
 	<a href="{{ url_for('studentsignup')}}"> Student Sign Up </a>
 	<a href="{{ url_for('teachersignup')}}"> Teacher Sign Up </a>
+	</div>
 {% endblock content %}
