@@ -70,7 +70,7 @@ def studentsignup():
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('studentverify'))
-    return render_template('signup.html', title='Sign Up', form=form)
+    return render_template('signup.html', title='Sign Up', form=form, stylesheet= url_for('static', filename='css/studentsignup.css'))
 
 
 @app.route('/teachersignup', methods=['GET', 'POST'])
@@ -86,7 +86,7 @@ def teachersignup():
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('teacherverify'))
-    return render_template('signup.html', title='Sign Up', form=form)
+    return render_template('signup.html', title='Sign Up', form=form, stylesheet=url_for('static', filename='css/teachersignup.css'))
 
 
 

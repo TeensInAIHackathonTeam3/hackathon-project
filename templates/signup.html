@@ -1,4 +1,7 @@
 {% extends "layout2.html" %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{stylesheet}}">
+{% endblock %}
 {% block content %}
     <div class="content-section">
         <form method="POST" action="">
@@ -65,7 +68,7 @@
         </form>
     </div>
     <div class="border-top pt-3">
-        <small class="text-muted">
+        <small>
             Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}">Login</a>
         </small>
     </div>
