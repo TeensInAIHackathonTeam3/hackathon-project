@@ -25,3 +25,16 @@ input.form-control {
 	display: inline-block;
 }
 
+.unamediv {
+	padding-left: 32.35vw;
+}
+.emaildiv {
+	padding-left: 34vw;
+}
+	
+.pwdiv {
+	padding-left: 32.25vw;
+}
+.confirmdiv {
+	padding-left: 25vw;
+}

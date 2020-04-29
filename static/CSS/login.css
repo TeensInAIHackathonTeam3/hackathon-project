@@ -19,8 +19,8 @@ body {
   text-align: center;
 }
 
-.form-group {
-	text-align: left;
+div.form-group {
+	text-align: right;
 }
 
 input.form-control {
@@ -30,9 +30,17 @@ input.form-control {
 }
 
 .emaildiv {
-	padding-left: 34vw;
+	padding-right: 34vw;
 }
 	
 .pwdiv {
-	padding-left: 32.25vw;
+	padding-right: 34vw;
+}
+.form-check{
+	text-align: center;
+}
+
+div.loginbutton {
+	text-align: center;
+	
 }
