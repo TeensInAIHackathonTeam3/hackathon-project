@@ -20,12 +20,32 @@ class User(db.Model):
 
 class TeacherInfo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    subject = db.Column(db.String(100), nullable=False)
-    timezone = db.Column(db.String(10), nullable=False)
-    language = db.Column(db.String(100), nullable=False)
+    teacher_first_name = db.Column(db.String(100), unique=True, nullable=False)
+    teacher_last_name = db.Column(db.String(100), unique=True, nullable=False)
+    teacher_email=db.Column(db.String(100), unique=True, nullable=False)
+    teacher_password=db.Column(db.String(60), nullable=False)
+    teacher_subject = db.Column(db.String(120), nullable=False)
+    teacher_timezone = db.Column(db.String(10), nullable=False)
+    teacher_language = db.Column(db.String(100), nullable=False)
+    
+    def __teach__(self):
+        return f"TeacherInfo('{self.teacher_first_name}','{self.teacher_last_name}', '{self.teacher_email}','{self.teacher_password}','{self.teacher_subject}', '{self.teacher_examBoard}','{self.teacher_timezone}','{self.teacher_language}')"
 
-
+#database structure for making a student account
+class StudentInfo(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    student_first_name = db.Column(db.String(20), nullable=False)
+    student_last_name= db.Column(db.String(100), unique=True, nullable=False)
+    student_email=db.Column(db.String(120), nullable=False)
+    student_password=db.Column(db.String(60), nullable=False)
+    student_subject = db.Column(db.String(100), nullable=False)
+    student_examBoard= db.Column(db.String(100), nullable=False)
+    student_timezone = db.Column(db.String(10), nullable=False)
+    student_language = db.Column(db.String(100), nullable=False)
+    
+    def __stud__(self):
+        return f"StudentInfo('{self.student_first_name}','{self.student_last_name}', '{self.student_email}','{self.student_password}','{self.student_subject}', '{self.student_examBoard}','{self.student_timezone}','{self.student_language}')"
+    
 teachersaccepted= [
     {
         'name': 'Ahmed Kingston', 
@@ -59,34 +79,34 @@ def login():
 
 @app.route('/studentsignup', methods=['GET', 'POST'])
 def studentsignup():
-    form = RegistrationForm()
+    form = StudentRegistrationForm()
     if form.validate_on_submit():
-        if User.query.filter(db.or_(User.username==form.username.data, User.email==form.email.data)).first():
+        if student_user.query.filter(student_user.email==form.student_email.data).first(): 
             flash('Account already exists!', 'danger')
             return render_template('register.html', title='Register',form=form)
-    
-        theuser=User(username=form.username.data, password=form.password.data, email=form.email.data)
-        db.session.add(theuser)
+        
+        student_user=StudentInfo(student_first_name=form.student_first_name.data, student_last_name=form.student_last_name.data, student_email=form.student_email.data,student_password=form.student_password.data, student_subject=form.student_subject.data, student_examBoard=form.student_examBoard.data,student_timezone=form.student_timezone.data, student_language=form.student_language.data)
+        db.session.add(StudentInfo)
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('studentverify'))
-    return render_template('signup.html', title='Sign Up', form=form, stylesheet= url_for('static', filename='css/studentsignup.css'))
+    return render_template('register.html', title='Sign Up', form=form, stylesheet= url_for('static', filename='css/studentsignup.css'))
 
 
 @app.route('/teachersignup', methods=['GET', 'POST'])
 def teachersignup():
-    form = RegistrationForm()
+    form = TeacherRegistrationForm()
     if form.validate_on_submit():
-        if User.query.filter(db.or_(User.username==form.username.data, User.email==form.email.data)).first():
-            #flash('Account already exists!', 'danger')
-            return render_template('register.html', title='Register',form=form)
-    
-        theuser=User(username=form.username.data, password=form.password.data, email=form.email.data)
-        db.session.add(theuser)
+        if teacher_user.query.filter(teacher_user.email==form.teacher_email.data).first(): 
+            flash('Account already exists!', 'danger')
+            return render_template('signupteachers.html', title='Sign Up',form=form)
+        
+        teacher_user=TeacherInfo(teacher_first_name=form.teacher_first_name.data, teacher_last_name=form.teacher_last_name.data, teacher_email=form.student_email.data,teacher_password=form.teacher_password.data, teacher_subject=form.teacher_subject.data, teacher_examBoard=form.teacher_examBoard.data,teacher_timezone=form.teacher_timezone.data, teacher_language=form.teacher_language.data)
+        db.session.add(TeacherInfo)
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('teacherverify'))
-    return render_template('signup.html', title='Sign Up', form=form, stylesheet=url_for('static', filename='css/teachersignup.css'))
+    return render_template('signupteachers.html', title='Sign Up', form=form, stylesheet=url_for('static', filename='css/teachersignup.css'))
 
 
 
