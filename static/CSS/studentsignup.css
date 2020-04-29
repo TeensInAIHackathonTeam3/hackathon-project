@@ -16,7 +16,7 @@ body {
 	color: #FFFFFF;
 }
 .form-group {
-	text-align: left;
+	text-align: right;
 }
 
 input.form-control {
@@ -26,15 +26,15 @@ input.form-control {
 }
 
 .unamediv {
-	padding-left: 32.35vw;
+	padding-right: 34vw;
 }
 .emaildiv {
-	padding-left: 34vw;
+	padding-right: 34vw;
 }
 	
 .pwdiv {
-	padding-left: 32.25vw;
+	padding-right: 34vw;
 }
 .confirmdiv {
-	padding-left: 25vw;
+	padding-right: 34vw;
 }
