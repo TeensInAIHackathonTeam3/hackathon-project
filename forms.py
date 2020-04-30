@@ -11,7 +11,7 @@ class TeacherRegistrationForm(FlaskForm):
                        validators=[DataRequired(), Email()])
     teacher_password= PasswordField('Password', validators=[DataRequired()])
     teacher_confirm_password= PasswordField('Confirm Password', 
-                                    validators=[DataRequired(), EqualTo('password')])
+                                    validators=[DataRequired(), EqualTo('teacher_password')])
     
     
     teacher_examBoard=SelectField(u'Exam Board', choices=[('ocra', 'OCR A'), ('aqa','AQA'), ('edx','EDEXCEL'), ('ocrb','OCR B')])
@@ -40,7 +40,7 @@ class StudentRegistrationForm(FlaskForm):
                        validators=[DataRequired(), Email()])
     student_password= PasswordField('Password', validators=[DataRequired()])
     student_confirm_password= PasswordField('Confirm Password', 
-                                    validators=[DataRequired(), EqualTo('password')])
+                                    validators=[DataRequired(), EqualTo('student_password')])
     student_examBoard=SelectField(u'Exam Board', choices=[('ocra', 'OCR A'), ('aqa','AQA'), ('edx','EDEXCEL'), ('ocrb','OCR B') ])
     
     student_timezone = SelectField(u'Time Zone', choices=[('utc','UTC'), ('bst','UTC+01:00'), ('cdt','UTC+09:00')])
