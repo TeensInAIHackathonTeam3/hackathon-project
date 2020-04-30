@@ -81,7 +81,7 @@ def login():
 def studentsignup():
     form = StudentRegistrationForm()
     if form.validate_on_submit():
-        if StudentInfo.query.filter(StudentInfo.email==form.student_email.data).first():
+        if StudentInfo.query.filter(StudentInfo.student_email==form.student_email.data).first():
             #flash('Account already exists!', 'danger')
             return render_template('signup.html', title='Sign Up',form=form)
     
@@ -97,7 +97,7 @@ def studentsignup():
 def teachersignup():
     form = TeacherRegistrationForm()
     if form.validate_on_submit():
-        if TeacherInfo.query.filter(TeacherInfo.email==form.teacher_email.data).first():
+        if TeacherInfo.query.filter(TeacherInfo.teacher_email==form.teacher_email.data).first():
             #flash('Account already exists!', 'danger')
             return render_template('signup.html', title='Sign up',form=form)
     
