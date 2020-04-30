@@ -1,4 +1,5 @@
 body {
+    margin: 20px;
 	
 	
 }
@@ -35,7 +36,7 @@ a {
   font-weight: 700;
   line-height: 45px;
   text-align: left;
-  margin-left: 7vw;
+  margin-left: 1vw;
   padding: 0.5vw;
   border-style: ridge;
   border-width: thin;
@@ -44,5 +45,5 @@ a {
 }
 
 .links {
-  padding-left: 25vw;
+  padding-left: 37vw;
 }
