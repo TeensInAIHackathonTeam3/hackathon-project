@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 class TeacherRegistrationForm(FlaskForm):
@@ -12,15 +12,16 @@ class TeacherRegistrationForm(FlaskForm):
     teacher_password= PasswordField('Password', validators=[DataRequired()])
     teacher_confirm_password= PasswordField('Confirm Password', 
                                     validators=[DataRequired(), EqualTo('password')])
-    teacher_subject= StringField('Subjects',
-                             validators= [DataRequired()])
-    teacher_examBoard=StringField('Exam Board', validators=[DataRequired()])
     
-    teacher_timezone=StringField('Time Zone',
-                                validators=[DataRequired()])
+    teacher_examBoard=SelectField(u'Exam Board', choices=[('ocra', 'OCR A'), ('aqa','AQA'), ('edx','EDEXCEL'), ('ocrb','OCR B') ])
     
-    teacher_language=StringField('Language', 
-                                 validators=[DataRequired()])
+    teacher_timezone = SelectField(u'Time Zone', choices=[('utc','UTC'), ('bst','BST'), ('cdt','CDT')])
+    
+    teacher_subject = SelectField(u'Subject', choices=[('phy','Physics'), ('mat','Maths'), ('che','Chemistry'), ('eng','English'), ('bio','Biology')])
+    
+    teacher_language = SelectField(u'Language', choices=[('fre','French'), ('eng','English'), ('spa','Spanish')])
+    
+    
     #make it so there are multiple subjects and examboards you can fill in
     #make a drop down menu for timezone, year group and accessibility
     
@@ -36,15 +37,15 @@ class StudentRegistrationForm(FlaskForm):
     student_password= PasswordField('Password', validators=[DataRequired()])
     student_confirm_password= PasswordField('Confirm Password', 
                                     validators=[DataRequired(), EqualTo('password')])
-    student_subject= StringField('Subjects',
-                             validators= [DataRequired()])
-    student_examBoard=StringField('Exam Board', validators=[DataRequired()])
+    student_examBoard=SelectField(u'Exam Board', choices=[('ocra', 'OCR A'), ('aqa','AQA'), ('edx','EDEXCEL'), ('ocrb','OCR B') ])
     
-    student_timezone=StringField('Time Zone',
-                                validators=[DataRequired()])
+    student_timezone = SelectField(u'Time Zone', choices=[('utc','UTC'), ('bst','BST'), ('cdt','CDT')])
     
-    student_language=StringField('Language', 
-                                 validators=[DataRequired()])
+    student_subject = SelectField(u'Subject', choices=[('phy','Physics'), ('mat','Maths'), ('che','Chemistry'), ('eng','English'), ('bio','Biology')])
+    
+    student_language = SelectField(u'Language', choices=[('fre','French'), ('eng','English'), ('spa','Spanish')])
+    
+                                 
     #make it so there are multiple subjects and examboards you can fill in
     #make a drop down menu for timezone, year group and accessibility
     
@@ -56,4 +57,3 @@ class LoginForm(FlaskForm):
     password= PasswordField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit=SubmitField('Login')
-
