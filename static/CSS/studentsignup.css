@@ -30,3 +30,9 @@ input.form-control {
 	display: inline-block;
 }
 
+select.form-control:not([size]):not([multiple]) {
+	width: 27vw;
+  	height: 3vw;
+    	display: inline-block;
+    	height: calc(2.25rem + 2px);
+}
