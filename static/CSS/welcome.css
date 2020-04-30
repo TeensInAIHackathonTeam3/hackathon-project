@@ -31,15 +31,16 @@ a {
   color: #FFFFFF;
   background: #13C366;
   font-family: Lato;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 700;
-  line-height: 52px;
+  line-height: 45px;
   text-align: left;
-  margin-left: 8vw;
+  margin-left: 7vw;
   padding: 0.5vw;
   border-style: ridge;
   border-width: thin;
   border-color: black;
+  border-radius: 30px;
 }
 
 .links {
