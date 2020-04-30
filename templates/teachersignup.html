@@ -8,6 +8,7 @@
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Join Today</legend>
+                <div class="formdiv">
                 <div class="form-group">
                     {{ form.teacher_first_name.label(class="form-control-label") }}
 
@@ -21,7 +22,13 @@
                     {% else %}
                         {{ form.teacher_first_name(class="form-control form-control-lg") }}
                     {% endif %}
-                     {{ form.teacher_last_name.label(class="form-control-label") }}
+                    </div>
+					</div>
+					<div class="formdiv">
+					<div class="formgroup">
+                    {{ form.teacher_last_name.label(class="form-control-label") }}
+                    
+                    
 
                     {% if form.teacher_last_name.errors %}
                         {{ form.teacher_last_name(class="form-control form-control-lg is-invalid") }}
@@ -34,6 +41,8 @@
                         {{ form.teacher_last_name(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                </div>
+                <div class="formdiv">
                 <div class="form-group">
                     {{ form.teacher_email.label(class="form-control-label") }}
                     {% if form.teacher_email.errors %}
@@ -47,6 +56,8 @@
                         {{ form.teacher_email(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                </div>
+                <div class="formdiv">
                 <div class="form-group">
                     {{ form.teacher_password.label(class="form-control-label") }}
                     {% if form.teacher_password.errors %}
@@ -60,6 +71,8 @@
                         {{ form.teacher_password(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                </div>
+                <div class="formdiv">
                 <div class="form-group">
                     {{ form.teacher_confirm_password.label(class="form-control-label") }}
                     {% if form.teacher_confirm_password.errors %}
@@ -73,6 +86,8 @@
                         {{ form.teacher_confirm_password(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                </div>
+                <div class="formdiv">
                 <div class="form-group">
                     {{ form.teacher_subject.label(class="form-control-label") }}
                     {% if form.teacher_subject.errors %}
@@ -86,7 +101,25 @@
                         {{ form.teacher_subject(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                </div>
                 
+                <div class="formdiv">
+                <div class="form-group">
+                    {{ form.teacher_examBoard.label(class="form-control-label") }}
+                    {% if form.teacher_examBoard.errors %}
+                        {{ form.teacher_examBoard(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.teacher_examBoard.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.teacher_examBoard(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                </div>
+            
+                <div class="formdiv">
                 <div class="form-group">
                     {{ form.teacher_timezone.label(class="form-control-label") }}
                     {% if form.teacher_timezone.errors %}
@@ -100,18 +133,68 @@
                         {{ form.teacher_timezone(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                </div>
+            
+                <div class="formdiv">
                 <div class="form-group">
-                    {{ form.teacher_language.label(class="form-control-label") }}
-                    {% if form.teacher_language.errors %}
-                        {{ form.teacher_language(class="form-control form-control-lg is-invalid") }}
+                    {{ form.teacher_first_language.label(class="form-control-label") }}
+                    {% if form.teacher_first_language.errors %}
+                        {{ form.teacher_first_language(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
-                            {% for error in form.teacher_language.errors %}
+                            {% for error in form.teacher_first_language.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.teacher_language(class="form-control form-control-lg") }}
+                        {{ form.teacher_first_language(class="form-control form-control-lg") }}
                     {% endif %}
+                </div>
+                </div>
+            
+                <div class="formdiv">
+                 <div class="form-group">
+                    {{ form.teacher_other_lang.label(class="form-control-label") }}
+                    {% if form.teacher_other_lang.errors %}
+                        {{ form.teacher_other_lang(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in other.teacher_other_lang.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.teacher_other_lang(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                </div>
+                <div class="formdiv">
+                <div class="form-group">
+                    {{ form.teacher_min_year.label(class="form-control-label") }}
+                    {% if form.teacher_min_year.errors %}
+                        {{ form.teacher_min_year(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in other.teacher_min_year.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.teacher_min_year(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                </div>
+                <div class="formdiv">
+                <div class="form-group">
+                    {{ form.teacher_max_year.label(class="form-control-label") }}
+                    {% if form.teacher_max_year.errors %}
+                        {{ form.teacher_max_year(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in other.teacher_max_year.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.teacher_max_year(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
                 </div>
             </fieldset>
             <div class="form-group">

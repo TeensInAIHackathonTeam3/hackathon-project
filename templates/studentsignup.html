@@ -133,16 +133,61 @@
 				</div>
 				<div class="formdiv">
                 <div class="form-group">
-                    {{ form.student_language.label(class="form-control-label") }}
-                    {% if form.student_language.errors %}
-                        {{ form.student_language(class="form-control form-control-lg is-invalid") }}
+                    {{ form.student_first_language.label(class="form-control-label") }}
+                    {% if form.student_first_language.errors %}
+                        {{ form.student_first_language(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
-                            {% for error in form.student_language.errors %}
+                            {% for error in form.student_first_language.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.student_language(class="form-control form-control-lg") }}
+                        {{ form.student_first_language(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+				</div>
+                <div class="formdiv">
+                <div class="form-group">
+                    {{ form.student_other_lang.label(class="form-control-label") }}
+                    {% if form.student_other_lang.errors %}
+                        {{ form.student_other_lang(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.student_other_lang.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.student_other_lang(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+				</div>
+                <div class="formdiv">
+                <div class="form-group">
+                    {{ form.student_year_group.label(class="form-control-label") }}
+                    {% if form.student_year_group.errors %}
+                        {{ form.student_year_group(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.student_year_group.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.student_year_group(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+				</div>
+                <div class="formdiv">
+                <div class="form-group">
+                    {{ form.student_accessibility.label(class="form-control-label") }}
+                    {% if form.student_accessibility.errors %}
+                        {{ form.student_accessibility(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.student_accessibility.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.student_accessibility(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
 				</div>

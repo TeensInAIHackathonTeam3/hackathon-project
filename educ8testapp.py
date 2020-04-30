@@ -17,11 +17,14 @@ class TeacherInfo(db.Model):
     teacher_email=db.Column(db.String(100), unique=True, nullable=False)
     teacher_password=db.Column(db.String(60), nullable=False)
     teacher_subject = db.Column(db.String(120), nullable=False)
+    teacher_examBoard = db.Column(db.String(120), nullable=False)
     teacher_timezone = db.Column(db.String(10), nullable=False)
-    teacher_language = db.Column(db.String(100), nullable=False)
-    
+    teacher_first_language = db.Column(db.String(100), nullable=False)
+    teacher_other_lang= db.Column(db.String(100), nullable=False)
+    teacher_min_year= db.Column(db.String(100), nullable=False)
+    teacher_max_year= db.Column(db.String(100), nullable=False)
     def __teach__(self):
-        return f"TeacherInfo('{self.teacher_first_name}','{self.teacher_last_name}', '{self.teacher_email}','{self.teacher_password}','{self.teacher_subject}', '{self.teacher_examBoard}','{self.teacher_timezone}','{self.teacher_language}')"
+        return f"TeacherInfo('{self.teacher_first_name}','{self.teacher_last_name}', '{self.teacher_email}','{self.teacher_password}','{self.teacher_subject}', '{self.teacher_examBoard}','{self.teacher_timezone}',''{self.teacher_first_language}','{self.teacher_other_lang}', '{self.teacher_min_year}', '{self.teacher_max_year}')"
 
 #database structure for making a student account
 class StudentInfo(db.Model):
@@ -33,10 +36,13 @@ class StudentInfo(db.Model):
     student_subject = db.Column(db.String(100), nullable=False)
     student_examBoard= db.Column(db.String(100), nullable=False)
     student_timezone = db.Column(db.String(10), nullable=False)
-    student_language = db.Column(db.String(100), nullable=False)
+    student_first_language = db.Column(db.String(100), nullable=False)
+    student_other_lang= db.Column(db.String(100), nullable=False)
+    student_year_group= db.Column(db.String(100), nullable=False)
+    student_accessibility = db.Column(db.String(100), nullable=False)
     
     def __stud__(self):
-        return f"StudentInfo('{self.student_first_name}','{self.student_last_name}', '{self.student_email}','{self.student_password}','{self.student_subject}', '{self.student_examBoard}','{self.student_timezone}','{self.student_language}')"
+        return f"StudentInfo('{self.student_first_name}','{self.student_last_name}', '{self.student_email}','{self.student_password}','{self.student_subject}', '{self.student_examBoard}','{self.student_timezone}','{self.student_first_language}','{self.student_other_lang}','{self.student_year_group}', '{self.student_accessibility}')"
     
 
 
@@ -79,7 +85,7 @@ def studentsignup():
             #flash('Account already exists!', 'danger')
             return render_template('signup.html', title='Sign Up',form=form)
     
-        theuser=StudentInfo(student_first_name=form.student_first_name.data, student_last_name=form.student_last_name.data, student_email=form.student_email.data,student_password=form.student_password.data, student_subject=form.student_subject.data, student_examBoard=form.student_examBoard.data,student_timezone=form.student_timezone.data, student_language=form.student_language.data)
+        theuser=StudentInfo(student_first_name=form.student_first_name.data, student_last_name=form.student_last_name.data, student_email=form.student_email.data,student_password=form.student_password.data, student_subject=form.student_subject.data, student_examBoard=form.student_examBoard.data,student_timezone=form.student_timezone.data, student_first_language=form.student_first_language.data, student_other_lang=form.student_other_lang.data, student_year_group=form.student_year_group.data, student_accessibility=form.student_accessibility.data)
         db.session.add(theuser)
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
@@ -95,7 +101,7 @@ def teachersignup():
             #flash('Account already exists!', 'danger')
             return render_template('signup.html', title='Sign up',form=form)
     
-        theuser=TeacherInfo(teacher_first_name=form.teacher_first_name.data, teacher_last_name=form.teacher_last_name.data, teacher_email=form.student_email.data,teacher_password=form.teacher_password.data, teacher_subject=form.teacher_subject.data, teacher_examBoard=form.teacher_examBoard.data,teacher_timezone=form.teacher_timezone.data, teacher_language=form.teacher_language.data)
+        theuser=TeacherInfo(teacher_first_name=form.teacher_first_name.data, teacher_last_name=form.teacher_last_name.data, teacher_email=form.student_email.data,teacher_password=form.teacher_password.data, teacher_subject=form.teacher_subject.data, teacher_examBoard=form.teacher_examBoard.data,teacher_timezone=form.teacher_timezone.data, teacher_first_language=form.student_first_language.data, teacher_other_lang=form.student_other_lang.data, teacher_min_year=form.teacher_min_year.data, teacher_max_year=form.teacher_max_year.data)
         db.session.add(theuser)
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
