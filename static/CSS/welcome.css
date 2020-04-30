@@ -7,6 +7,8 @@ img{
 	width: 30vw;
 	display: inline-block;
 	margin: 2vw;
+	border-style: solid;
+	border-radius: 10px;
 }
 .companyname {
   background: #13C366;
@@ -16,6 +18,8 @@ img{
   font-weight: 700;
   line-height: 78px;
   text-align: left;
+  padding-left: 10px;
+  border-radius: 30px;
 }
 .welcometext {
   
@@ -36,9 +40,9 @@ a {
   font-weight: 700;
   line-height: 45px;
   text-align: left;
-  margin-left: 1vw;
-  padding: 0.5vw;
-  border-style: ridge;
+  margin-left: 1.6vw;
+  padding: 0.8vw;
+  border-style: none;
   border-width: thin;
   border-color: black;
   border-radius: 30px;
