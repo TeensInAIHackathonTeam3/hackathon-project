@@ -22,6 +22,10 @@
                     {% else %}
                         {{ form.student_first_name(class="form-control form-control-lg") }}
                     {% endif %}
+					</div>
+					</div>
+					<div class="formdiv">
+					<div class="formgroup">
                      {{ form.student_last_name.label(class="form-control-label") }}
 
                     {% if form.student_last_name.errors %}
@@ -39,6 +43,7 @@
 				<div class="formdiv">
                 <div class="form-group">
                     {{ form.student_email.label(class="form-control-label") }}
+					
                     {% if form.student_email.errors %}
                         {{ form.student_email(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
