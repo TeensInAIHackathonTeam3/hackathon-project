@@ -60,9 +60,6 @@ teachersaccepted= [
 def home():
     return render_template('welcome_screen.html')
     
-@app.route('/about')
-def about():
-    return render_template('about.html', title='About')
 
 @app.route('/studentlogin', methods=['GET', 'POST'])
 def studentlogin():
@@ -122,7 +119,7 @@ def teachersignup():
 @app.route('/privacy_policy')
 def privacy_policy():
     return render_template('privacy_policy.html', title='Privacy Policy')
-    ##return render_template('privacy_policy.html', title='Privacy policy', form=form)
+
 
 ##@app.route('/unistudentsignup',  methods=['GET', 'POST'])
 ##def unistudentsignup():
