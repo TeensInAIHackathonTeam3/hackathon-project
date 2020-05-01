@@ -9,7 +9,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
 
-
 class TeacherInfo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     teacher_first_name = db.Column(db.String(100), nullable=False)
@@ -160,6 +159,11 @@ def studenthome():
 @app.route('/teacherhome')
 def teacherhome():
     return('Teacher Homepage')
+
+@app.route('/student_search')
+def teacher_search():
+    return('Teacher Search Result')
+    return render_template('student_search.html', title='Search results for classes')
 
 if __name__ == '__main__':
     db.create_all()
