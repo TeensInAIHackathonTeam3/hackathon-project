@@ -51,3 +51,10 @@ a {
 .links {
   padding-left: 37vw;
 }
+
+@media (max-width:973px) {
+	.welcometext {
+		font-size: 55px;
+	}
+}
+	

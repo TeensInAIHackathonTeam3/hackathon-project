@@ -64,13 +64,24 @@ def home():
 def about():
     return render_template('about.html', title='About')
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
+@app.route('/studentlogin', methods=['GET', 'POST'])
+def studentlogin():
     form = LoginForm()
     if form.validate_on_submit():
-        if User.query.filter(db.and_(User.email==form.email.data, User.password==form.password.data)).first():
+        if StudentInfo.query.filter(db.and_(StudentInfo.email==form.email.data, StudentInfo.password==form.password.data)).first():
             #flash('You have been logged in!', 'success')
             return redirect(url_for('studenthome'))
+        #else:
+            #flash('Login Unsuccessful. Please check username and password', 'danger')
+    return render_template('login.html', title='Login', form=form)
+
+@app.route('/teacherlogin', methods=['GET', 'POST'])
+def teacherlogin():
+    form = LoginForm()
+    if form.validate_on_submit():
+        if TeacherInfo.query.filter(db.and_(TeacherInfo.email==form.email.data, TeacherInfo.password==form.password.data)).first():
+            #flash('You have been logged in!', 'success')
+            return redirect(url_for('teacherhome'))
         #else:
             #flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
