@@ -1,6 +1,9 @@
 {% extends "layout2.html" %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/studenthome.css') }}">
+{% endblock %}
 {% block content %}
-	<h1> OLFA For Students</h1>
+	<h1 class="companyname"> OLFA For Students</h1>
 	<h1> Student Homepage </h1>
 	<h2> Teachers who've accepted your requests </h2>
 	{% for teacher in teachersaccepted %}
