@@ -54,6 +54,15 @@ teachersaccepted= [
     }   
 ]
 
+studentsaccepted= [
+    {
+        'ID': '1auhio2309', 
+        'subject' : 'GCSE chemistry',
+        'timezone': 'BST',
+        'language':'English'
+    }   
+]
+
 @app.route('/')
 @app.route('/home')
 def home():
@@ -158,7 +167,7 @@ def studenthome():
 
 @app.route('/teacherhome')
 def teacherhome():
-    return('Teacher Homepage')
+    return render_template('teacherhome.html', studentsaccepted=studentsaccepted)
 
 @app.route('/student_search')
 def student_search():
