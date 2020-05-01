@@ -68,7 +68,7 @@ def about():
 def studentlogin():
     form = LoginForm()
     if form.validate_on_submit():
-        if StudentInfo.query.filter(db.and_(StudentInfo.email==form.email.data, StudentInfo.password==form.password.data)).first():
+        if StudentInfo.query.filter(db.and_(StudentInfo.student_email==form.email.data, StudentInfo.student_password==form.password.data)).first():
             #flash('You have been logged in!', 'success')
             return redirect(url_for('studenthome'))
         #else:
@@ -79,7 +79,7 @@ def studentlogin():
 def teacherlogin():
     form = LoginForm()
     if form.validate_on_submit():
-        if TeacherInfo.query.filter(db.and_(TeacherInfo.email==form.email.data, TeacherInfo.password==form.password.data)).first():
+        if TeacherInfo.query.filter(db.and_(TeacherInfo.teacher_email==form.email.data, TeacherInfo.teacher_password==form.password.data)).first():
             #flash('You have been logged in!', 'success')
             return redirect(url_for('teacherhome'))
         #else:
