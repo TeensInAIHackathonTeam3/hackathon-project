@@ -161,8 +161,7 @@ def teacherhome():
     return('Teacher Homepage')
 
 @app.route('/student_search')
-def teacher_search():
-    return('Teacher Search Result')
+def student_search():
     return render_template('student_search.html', title='Search results for classes')
 
 if __name__ == '__main__':
