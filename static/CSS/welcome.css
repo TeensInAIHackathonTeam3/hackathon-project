@@ -31,6 +31,16 @@ img{
   display: inline-block;
   padding-left: 10vw;
 }
+h2 {
+	text-align: center;
+	background: #13C366;
+    color: #FFFFFF;
+}
+.about-section {
+	margin-top: 1vw;
+	border-top: 0.3vw solid black;
+	padding-top: 5vw;
+}
 .links {
   padding-left: 37vw;
   display: flex;
