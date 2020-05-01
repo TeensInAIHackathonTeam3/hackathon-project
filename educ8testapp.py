@@ -119,7 +119,10 @@ def teachersignup():
         return redirect(url_for('teacherverify'))
     return render_template('teachersignup.html', title='Sign Up', form=form)
 
-
+@app.route('/privacy_policy')
+def privacy_policy():
+    return render_template('privacy_policy.html', title='Privacy Policy')
+    ##return render_template('privacy_policy.html', title='Privacy policy', form=form)
 
 ##@app.route('/unistudentsignup',  methods=['GET', 'POST'])
 ##def unistudentsignup():
