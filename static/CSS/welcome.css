@@ -60,7 +60,7 @@ a {
 	
 	a {
 		font-size: 3vw;
-		display: inline;
+		flex: 1;
 		}
 			
 }
