@@ -109,7 +109,7 @@ def teachersignup():
             #flash('Account already exists!', 'danger')
             return render_template('signup.html', title='Sign up',form=form)
     
-        theuser=TeacherInfo(teacher_first_name=form.teacher_first_name.data, teacher_last_name=form.teacher_last_name.data, teacher_email=form.student_email.data,teacher_password=form.teacher_password.data, teacher_subject=form.teacher_subject.data, teacher_examBoard=form.teacher_examBoard.data,teacher_timezone=form.teacher_timezone.data, teacher_first_language=form.student_first_language.data, teacher_other_lang=form.student_other_lang.data, teacher_min_year=form.teacher_min_year.data, teacher_max_year=form.teacher_max_year.data)
+        theuser=TeacherInfo(teacher_first_name=form.teacher_first_name.data, teacher_last_name=form.teacher_last_name.data, teacher_email=form.teacher_email.data,teacher_password=form.teacher_password.data, teacher_subject=form.teacher_subject.data, teacher_examBoard=form.teacher_examBoard.data,teacher_timezone=form.teacher_timezone.data, teacher_first_language=form.teacher_first_language.data, teacher_other_lang=form.teacher_other_lang.data, teacher_min_year=form.teacher_min_year.data, teacher_max_year=form.teacher_max_year.data)
         db.session.add(theuser)
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
