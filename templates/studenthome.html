@@ -11,5 +11,25 @@
 	<p>Subject: {{ teacher.subject }}</p>
 	<p>Timezone: {{ teacher.timezone }} </p>
 	<p>Language: {{ teacher.language }} </p>
+    
+
+<body>
+<div class="topnav">
+  <div class="search-container">
+    <form action="/teacher_search"> 
+      <input type="text" placeholder="Find a teacher.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+<div style="padding-left:16px">
+  <h2>Responsive Search Bar</h2>
+  <p>Navigation bar with a search box and a submit button inside of it.</p>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+</body>
+
+
+
 	{% endfor %}
 {% endblock content %}
