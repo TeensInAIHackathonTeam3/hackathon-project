@@ -173,6 +173,11 @@ def teacherhome():
 def student_search():
     return render_template('student_search.html', title='Search results for classes')
 
+@app.route('/teacher_search')
+def teacher_search():
+    return render_template('teacher_search.html', title='Search results for other teachers')
+
+
 if __name__ == '__main__':
     db.create_all()
     app.run()

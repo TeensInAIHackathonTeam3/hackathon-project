@@ -5,9 +5,21 @@
 {% block content %}
 	<h1 class="companyname"> OLFA For Teachers</h1>
 	<h1> Teacher Homepage </h1>
+	<div class="topnav">
+    <div class="search-container">
+    <form action="/teacher_search"> 
+      <input type="text" placeholder="Find a tutor.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    </div>
+    </div>
+    <div style="padding-left:16px">
+    <h2>Search for another tutor</h2>
+    <p>We will find you another tutor which you could delegate your work with</p>
+    </div>
 	<h2> Students to teach </h2>
 	{% for student in studentsaccepted %}
-	<h3>{{ student.name }}</h3>
+    <p>Student ID: {{student.ID}}            </p>
 	<p>Subject: {{ student.subject }}</p>
 	<p>Timezone: {{ student.timezone }} </p>
 	<p>Language: {{ student.language }} </p>
