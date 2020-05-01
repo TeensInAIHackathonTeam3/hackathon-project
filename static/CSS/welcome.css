@@ -61,6 +61,12 @@ a {
   border-radius: 30px;
 }
 
+a.ml-2 {
+	background: #FFFFFF;
+	color: black;
+	font-size: 1vw;
+}
+
 
 
 @media (max-width:973px) {
