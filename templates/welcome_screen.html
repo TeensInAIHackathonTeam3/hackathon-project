@@ -12,4 +12,10 @@
 	<a href="{{ url_for('studentsignup')}}">Student Sign Up</a>
 	<a href="{{ url_for('teachersignup')}}">Teacher Sign Up</a>
 	</div>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            How we use your data<a class="ml-2" href="{{ url_for('privacy_policy') }}">(privacy policy)</a>
+            Our conditions<a class="ml-2" href="{{url_for('terms_of_use')}}">(terms of use)</a>
+        </small>
+    </div>
 {% endblock content %}

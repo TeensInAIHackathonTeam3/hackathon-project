@@ -121,6 +121,10 @@ def privacy_policy():
     return render_template('privacy_policy.html', title='Privacy Policy')
 
 
+@app.route('/terms_of_use')
+def terms_of_use():
+    return render_template('terms_of_use.html', title= 'Terms of use')
+
 ##@app.route('/unistudentsignup',  methods=['GET', 'POST'])
 ##def unistudentsignup():
 ##    form = RegistrationForm()
