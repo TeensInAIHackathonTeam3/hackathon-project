@@ -1,6 +1,11 @@
 {% extends "layout2.html" %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/studentverify.css') }}">
+{% endblock  %}
 {% block content %}
 	<h1> OLFA </h1>
+	<div class="maintext">
 	<h1> Student account verified </h1>
     To continue, click<a class="ml-2" href="{{url_for('studenthome')}}">continue</a>
+	</div>
 {% endblock content %}
