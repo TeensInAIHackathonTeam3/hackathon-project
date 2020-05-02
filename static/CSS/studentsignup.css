@@ -12,6 +12,10 @@ body {
   text-align: left;
 }
 
+.join {
+	text-align: center;
+}
+
 .btn-outline-info {
 	background-color: #00A6FF;
 	color: #FFFFFF;
