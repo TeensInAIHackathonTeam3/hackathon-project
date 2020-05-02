@@ -22,13 +22,14 @@ h2.searchinfo {
 }
 
 .teachers {
-	margin-top: 3vw;
+	margin-top: 5vw;
 	
 }
 
 .column{
 	float: left;
 	width: 33.33%;
+	padding: 1.5vw;
 }
 
 
