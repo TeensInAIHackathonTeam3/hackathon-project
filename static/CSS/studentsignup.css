@@ -42,3 +42,8 @@ select.form-control:not([size]):not([multiple]) {
     	display: inline-block;
     	height: calc(2.25rem + 2px);
 }
+
+.ml-2 {
+	margin-left: 0rem!important;
+	margin-right: 2rem;
+}
