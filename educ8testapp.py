@@ -151,7 +151,7 @@ def terms_of_use():
 
 @app.route('/studentverify')
 def studentverify():
-    return('Email Verified')
+    return render_template('student_verified.html', title='Student Email Verified')
 
 ##@app.route('/unistudentverify')
 ##def unistudentverify():
@@ -159,7 +159,7 @@ def studentverify():
 
 @app.route('/teacherverify')
 def teacherverify():
-    return('Email Verified')
+    return render_template('teacher_verified.html', title='Teacher Email Verified')
 
 @app.route('/studenthome')
 def studenthome():
@@ -188,6 +188,7 @@ def John_prof():
 @app.route('/Jane_prof')
 def Jane_prof():
     return render_template('Jane_prof.html', title='Profile')
+
 
 if __name__ == '__main__':
     db.create_all()
