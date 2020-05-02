@@ -17,14 +17,23 @@
   </div>
 </div>
 <div class="teachers">
+<div class="row">
+	<div class="column">
 	<h2> Teachers who've accepted your requests </h2>
 	{% for teacher in teachersaccepted %}
+	
 	<h3>{{ teacher.name }}</h3>
 	<p>Subject: {{ teacher.subject }}</p>
 	<p>Timezone: {{ teacher.timezone }} </p>
-	<p>Language: {{ teacher.language }} </p>
-    
-    
+	<p>Language: {{ teacher.language }} </p> 
 {% endfor %}
+</div>
+<div class="column">
+<h2> Pending Teacher Requests </h2>
+</div>
+<div class="column">
+<h2> Recommended Teachers </h2>
+</div>
+</div>
 </div>
 {% endblock content %}
