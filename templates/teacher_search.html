@@ -1,9 +1,27 @@
 {% extends "layout2.html" %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/teacher_search.css') }}">
+{% endblock  %}
 {% block content %}
 	<h1> OLFA </h1>
 	<h1> Tutors teaching similar subjects to you</h1>
+    <div class="Bhmed">
     <p> Bhmed Lingston </p>
     <p> Also a Teacher of Microbiology</p>
     <p> Classroom avaiable at 18:00 for 60 minute session</p>
-    <p> Contact form?</p> <br>
+    <p> Contact form available at : XXXX</p> <br>
+    </div>
+    <div class="Jane">
+    <p> Jane Doe </p>
+    <p> Also a Teacher of Microbiology</p>
+    <p> Classroom avaiable at 16:00 for 30 minute session</p>
+    <p> Contact form available at : XXXX</p> <br>
+    </div>
+    <div class="John">
+    <p> John Doe </p>
+    <p> A Teacher of Biology</p>
+    <p> Classroom avaiable at 17:45 for 45 minute session</p>
+    <p> Contact form available at : XXXX</p> <br>
+    </div>
+
 {% endblock content %}
