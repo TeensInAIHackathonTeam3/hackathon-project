@@ -14,7 +14,8 @@ form {
 .searchinfo {
 	padding-left:1vw;
 	font-size: 1.5vw;
-	float: left;
+	
+	text-align: center;
 }
 h2.searchinfo {
 	font-size: 2vw;
@@ -30,6 +31,7 @@ h2.searchinfo {
 	float: left;
 	width: 33.33%;
 	padding: 1.5vw;
+	border-right: 0.2vw solid black;
 }
 
 
