@@ -2,3 +2,41 @@ body {
 	background: #4FDBDB;
 	font-family: Lato, sans-serif;
 }
+form {
+	text-align: center;
+}
+
+.searchcontainer {
+	overflow: hidden;
+}
+
+.searchinfo {
+	padding-left:1vw;
+	font-size: 1.5vw;
+	
+	text-align: center;
+}
+h2.searchinfo {
+	font-size: 2vw;
+	overflow: hidden;
+}
+
+.students {
+	margin-top: 5vw;
+	
+}
+
+.column{
+	float: left;
+	width: 33.33%;
+	padding: 1.5vw;
+	border-right: 0.2vw solid black;
+}
+
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
