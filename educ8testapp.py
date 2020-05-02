@@ -177,6 +177,17 @@ def student_search():
 def teacher_search():
     return render_template('teacher_search.html', title='Search results for other teachers')
 
+@app.route('/Bhmed_prof')
+def Bhmed_prof():
+    return render_template('Bhmed_prof.html', title='Profile')
+
+@app.route('/John_prof')
+def John_prof():
+    return render_template('John_prof.html', title='Profile')
+
+@app.route('/Jane_prof')
+def Jane_prof():
+    return render_template('Jane_prof.html', title='Profile')
 
 if __name__ == '__main__':
     db.create_all()
