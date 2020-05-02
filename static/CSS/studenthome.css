@@ -6,3 +6,22 @@ body {
 form {
 	text-align: center;
 }
+
+.searchcontainer {
+	overflow: hidden;
+}
+
+.searchinfo {
+	padding-left:1vw;
+	font-size: 1.5vw;
+	float: left;
+}
+h2.searchinfo {
+	font-size: 2vw;
+	overflow: hidden;
+}
+
+.teachers {
+	margin-top: 3vw;
+	text-align: left;
+}

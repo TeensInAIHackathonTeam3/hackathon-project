@@ -4,8 +4,11 @@
 {% endblock %}
 {% block content %}
 	<h1 class="companyname"> OLFA For Students</h1>
-	<h1> Student Homepage </h1>
 	<div class="topnav">
+	<div class="searchinfo">
+  <h2>Search for a subject</h2>
+  <p>We will find you a tutor who can help you with this subject</p>
+</div>
   <div class="search-container">
     <form action="/student_search"> 
       <input type="text" placeholder="Find a tutor.." name="search">
@@ -13,11 +16,7 @@
     </form>
   </div>
 </div>
-<div style="padding-left:16px">
-  <h2>Search for a subject</h2>
-  <p>We will find you a tutor who can help you with this subject</p>
-
-</div>
+<div class="teachers">
 	<h2> Teachers who've accepted your requests </h2>
 	{% for teacher in teachersaccepted %}
 	<h3>{{ teacher.name }}</h3>
@@ -27,4 +26,5 @@
     
     
 {% endfor %}
+</div>
 {% endblock content %}
