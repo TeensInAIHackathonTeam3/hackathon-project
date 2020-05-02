@@ -17,6 +17,8 @@
     <h2>Search for another tutor</h2>
     <p>We will find you another tutor which you could delegate your work with</p>
     </div>
+	<div class="students">
+	<div class="row"
 	<h2> Students to teach </h2>
 	{% for student in studentsaccepted %}
     <p>Student ID: {{student.ID}}            </p>
@@ -25,4 +27,6 @@
 	<p>Language: {{ student.language }} </p>
     
 {% endfor %}
+</div>
+</div>
 {% endblock content %}
