@@ -28,6 +28,10 @@ body {
 	padding-right: 34vw;
 }
 
+
+.form-control-lg {
+	font-size: 15px;
+}
 input.form-control {
 	width: 27vw;
 	height: 3vw;
