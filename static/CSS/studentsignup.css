@@ -36,6 +36,10 @@ input.form-control {
 	display: inline-block;
 }
 
+.form-control-lg {
+	font-size: 15px;
+}
+
 select.form-control:not([size]):not([multiple]) {
 	width: 27vw;
   	height: 3vw;
