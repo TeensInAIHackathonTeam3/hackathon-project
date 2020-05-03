@@ -1,4 +1,3 @@
 __pycache__/*
 .env/*
-site.db
 site.db-journal

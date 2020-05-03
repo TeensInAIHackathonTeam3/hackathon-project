@@ -37,10 +37,13 @@
 </div>
 <div class="column">
 <h2> Recommended Teachers </h2>
-    <h3>Jane Doe</h3>
-	<p>Subject: Microbiology </p>
-	<p>Timezone: BST </p>
-	<p>Language: English </p> 
+    {% for teacher in teachersrecommended %}
+	
+	<h3>{{ teacher.name }}</h3>
+	<p>Subject: {{ teacher.subject }}</p>
+	<p>Timezone: {{ teacher.timezone }} </p>
+	<p>Language: {{ teacher.language }} </p> 
+{% endfor %}
 </div>
 </div>
 </div>

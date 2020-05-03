@@ -6,7 +6,7 @@ def studentmatchteacher(stu_subject, stu_lang, stu_otherlang, stu_year, stu_time
     for teacher in TeacherInfo.query.filter(db.and_(TeacherInfo.teacher_subject==stu_subject,
                                      db.or_(TeacherInfo.teacher_first_language==stu_lang,
                                             TeacherInfo.teacher_first_language==stu_otherlang))).all():
-        teacherlist.append([0,teacher, teacher.id])
+        teacherlist.append([0,teacher])
     #filtering by year
     for teacher in teacherlist:
         if not year_req in year_range(teacher[1].teacher_min_year,teacher[1].teacher_max_year):
@@ -20,12 +20,25 @@ def studentmatchteacher(stu_subject, stu_lang, stu_otherlang, stu_year, stu_time
         if teacher[1].teacher_first_language == stu_otherlang:
             teacher[0]-= 15
     teacherlist.sort()
-        
-    return teacherlist
+    teacherlist.reverse()
+    data_out=[]
+    for teacher in teacherlist:
+        data_out.append(
+            {
+                'name': "{} {}".format(teacher[1].teacher_first_name,teacher[1].teacher_last_name) ,
+                'subject' : abbreviation_to_name(teacher[1].teacher_subject),
+                'timezone': teacher[1].teacher_timezone.upper(),
+                'language': abbreviation_to_name(teacher[1].teacher_first_language)
+                })   
+    return data_out
 
 def time_zone_to_int(timezone):
     index=["utc","bst","cdt"].index(timezone)
-    return [0,1,-5][index]
+    return (0,1,-5)[index]
+
+def abbreviation_to_name():
+    index=("mat","eng","phy","che","bio","fre","spa")
+    return("Maths","English","Physics","Chemistry","Biology","French","Spanish")[index]
 
 def year_range(lower,upper):
     lower=int(lower[2:len(lower)])
@@ -33,5 +46,11 @@ def year_range(lower,upper):
     if upper<lower:
         upper,lower=lower,upper
     return range(lower,upper+1)
+def hardcoded_student_match_teacher():
+    student=StudentInfo.query.filter(StudentInfo.id==3).first()
     
-studentmatchteacher("eng","eng","na","yr10","utc")
+    return studentmatchteacher(student.student_subject, student.student_first_language,
+                               student.student_other_language, student.student_year_group,
+                               student.student_timezone)
+
+#student_match_teacher("eng","eng","na","yr10","utc")
