@@ -25,6 +25,10 @@ h2.searchinfo {
 	margin-top: 5vw;
 	
 }
+button {
+	height: 2vw;
+	width: 6vw;
+}
 
 .column{
 	float: left;
