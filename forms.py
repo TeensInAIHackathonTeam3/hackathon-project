@@ -51,7 +51,7 @@ class StudentRegistrationForm(FlaskForm):
     
     student_other_lang= SelectField(u'Other languages?', choices=[('fre','French'), ('eng','English'), ('spa','Spanish'),('na','N/A')])
     
-    student_year_group= SelectField(u'Year Group', choices =[('yr10', 'Year 10'), ('yr11', 'Year 11'), ('yr 12', 'Year 12'), ('yr 13', 'Year 13')])  
+    student_year_group= SelectField(u'Year Group', choices =[('yr10', 'Year 10'), ('yr11', 'Year 11'), ('yr12', 'Year 12'), ('yr13', 'Year 13')])  
                                     
     student_accessibility= StringField('Do you have any accessibility requirements?',
                                       validators=[DataRequired()])
