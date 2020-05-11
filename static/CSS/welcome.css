@@ -82,6 +82,10 @@ a.ml-2 {
 
 
 @media (max-width:973px) {
+	.companyname {
+		font-size: 7vw;
+		line-height: 9vw;
+	}
 	.links {
 		padding-left: 15vw;
 		flex-direction: column;
