@@ -64,3 +64,15 @@ button {
   display: table;
   clear: both;
 }
+@media (max-width:973px) {
+	.companyname {
+		font-size: 5vw;
+		line-height: 6vw;
+	}
+	.searchinfo {
+		font-size: 3vw;
+	}
+	.searchinfo h2{
+		font-size: 4vw;
+	}
+}

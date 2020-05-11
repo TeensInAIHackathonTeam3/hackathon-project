@@ -58,3 +58,9 @@ button {
   display: table;
   clear: both;
 }
+@media (max-width:973px) {
+	.companyname {
+		font-size: 5vw;
+		line-height: 6vw;
+	}
+}
