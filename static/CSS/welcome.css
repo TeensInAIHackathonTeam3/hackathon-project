@@ -42,6 +42,17 @@ h2 {
 	border-top: 0.3vw solid black;
 	padding-top: 5vw;
 }
+.about-section h2{
+	text-align: center;
+	background: #13C366;
+	color: #FFFFFF;
+	line-height: 60vh;
+	font-size: 15vh;
+	background-image: url(/static/education.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
 .links {
   padding-left: 37vw;
   display: flex;
