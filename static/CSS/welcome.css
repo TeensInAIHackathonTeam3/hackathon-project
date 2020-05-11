@@ -91,6 +91,9 @@ a.ml-2 {
 		flex: 1;
 		margin-bottom: 0.5vw;
 		}
-			
+	.about-section h2 {
+        line-height: 20vh;
+		font-size: 8vh;
+	}	
 }
 	
