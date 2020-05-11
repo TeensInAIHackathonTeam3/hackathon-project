@@ -83,13 +83,14 @@ a.ml-2 {
 
 @media (max-width:973px) {
 	.links {
+		padding-left: 15vw;
 		flex-direction: column;
 	}
 	
 	a {
-		font-size: 3vw;
+		font-size: 3.5vw;
 		flex: 1;
-		margin-bottom: 0.5vw;
+		margin-bottom: 1vw;
 		align-self: center;
 		}
 	.about-section h2 {
