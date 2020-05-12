@@ -1,1 +1,1 @@
-web: gunicorn OLFA:app1
+web: gunicorn OLFA:app
