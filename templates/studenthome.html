@@ -22,28 +22,33 @@
 	<div class="column">
 	<h2> Teachers who've accepted your requests </h2>
 	{% for teacher in teachersaccepted %}
-	
+	<div class="teacher">
 	<h3>{{ teacher.name }}</h3>
 	<p>Subject: {{ teacher.subject }}</p>
 	<p>Timezone: {{ teacher.timezone }} </p>
 	<p>Language: {{ teacher.language }} </p> 
+	</div>
 {% endfor %}
 </div>
 <div class="column">
+
 <h2> Pending Teacher Requests </h2>
+<div class="teacher">
     <h3>Bhmed Lingston</h3>
 	<p>Subject: Microbiology </p>
 	<p>Timezone: BST </p>
 	<p>Language: English </p> 
 </div>
+</div>
 <div class="column">
 <h2> Recommended Teachers </h2>
     {% for teacher in teachersrecommended %}
-	
+	<div class="teacher">
 	<h3>{{ teacher.name }}</h3>
 	<p>Subject: {{ teacher.subject }}</p>
 	<p>Timezone: {{ teacher.timezone }} </p>
 	<p>Language: {{ teacher.language }} </p> 
+	</div>
 {% endfor %}
 </div>
 </div>

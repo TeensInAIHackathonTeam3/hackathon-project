@@ -58,6 +58,16 @@ button {
   display: table;
   clear: both;
 }
+
+.item {
+	background-color: #4b68d3;
+	border-radius: 30px;
+	text-align: center;
+	display: table;
+	padding: 1vw;
+	margin: 0px auto 4px auto;
+}
+	
 @media (max-width:973px) {
 	.companyname {
 		font-size: 5vw;

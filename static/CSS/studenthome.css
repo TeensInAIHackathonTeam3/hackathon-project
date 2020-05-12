@@ -57,6 +57,14 @@ button {
 	font-size: 1.5vw;
 }
 
+.teacher {
+	background-color: #4b68d3;
+	border-radius: 30px;
+	text-align: center;
+	display: table;
+	padding: 1vw;
+	margin: 0px auto 4px auto;
+}
 
 
 .row:after {
