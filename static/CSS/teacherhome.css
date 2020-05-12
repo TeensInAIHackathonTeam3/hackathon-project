@@ -63,4 +63,14 @@ button {
 		font-size: 5vw;
 		line-height: 6vw;
 	}
+	.searchinfo {
+		font-size: 3vw;
+	}
+	.searchinfo h2{
+		font-size: 4vw;
+	}
+	button {
+		height: 8vw;
+		width: 17vw;
+	}
 }
