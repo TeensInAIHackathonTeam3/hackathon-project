@@ -1,1 +1,1 @@
-web: node dist/OLFA.py
+web: python OLFA.py
