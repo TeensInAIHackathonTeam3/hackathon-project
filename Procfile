@@ -1,1 +1,1 @@
-web: python OLFA.py
+web: gunicorn app:app
