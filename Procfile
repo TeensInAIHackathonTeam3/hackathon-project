@@ -1,1 +1,1 @@
-web: bundle exec flask server -p $PORT
+web: node dist/server.js
