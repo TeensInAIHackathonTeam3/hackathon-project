@@ -79,4 +79,14 @@ button {
 		height: 8vw;
 		width: 17vw;
 	}
+	.column {
+		width: 100%;
+		margin-left: 3vw;
+	}
+	.column h2{
+		font-size: 5vw;
+	}
+	.column h3{
+		font-size: 4vw;
+	}
 }
