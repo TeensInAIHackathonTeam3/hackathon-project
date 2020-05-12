@@ -1,1 +1,1 @@
-web: python OLFA.py
+web: bundle exec flask server -p $PORT
