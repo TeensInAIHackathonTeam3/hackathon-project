@@ -82,6 +82,7 @@ button {
 	.column {
 		width: 100%;
 		margin-left: 3vw;
+		border-bottom: 1vw solid white;
 	}
 	.column h2{
 		font-size: 5vw;
