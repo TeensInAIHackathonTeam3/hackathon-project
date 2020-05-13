@@ -2,7 +2,6 @@ from datetime import datetime
 from flask import Flask, render_template, url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from forms import StudentRegistrationForm, TeacherRegistrationForm, LoginForm
-import bcrypt
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
@@ -25,10 +24,6 @@ class TeacherInfo(db.Model):
     teacher_max_year= db.Column(db.String(100), nullable=False)
     def __teach__(self):
         return f"TeacherInfo('{self.teacher_first_name}','{self.teacher_last_name}', '{self.teacher_email}','{self.teacher_password}','{self.teacher_subject}', '{self.teacher_examBoard}','{self.teacher_timezone}',''{self.teacher_first_language}','{self.teacher_other_lang}', '{self.teacher_min_year}', '{self.teacher_max_year}')"
-    def teach_hash(self):  
-        salt = bcrypt.gensalt()
-        salt_hashed = bcrypt.hashpw(teacher_password.encode(), salt)
-        return salt_hashed
 
 #database structure for making a student account
 class StudentInfo(db.Model):
@@ -182,8 +177,7 @@ def teachersignup():
             #flash('Account already exists!', 'danger')
             return render_template('teachersignup.html', title='Sign up',form=form)
     
-        theuser=TeacherInfo(teacher_first_name=form.teacher_first_name.data, teacher_last_name=form.teacher_last_name.data, teacher_email=form.teacher_email.data,teacher_passwordhash = hashedpw, teacher_subject=form.teacher_subject.data, teacher_examBoard=form.teacher_examBoard.data,teacher_timezone=form.teacher_timezone.data, teacher_first_language=form.teacher_first_language.data, teacher_other_lang=form.teacher_other_lang.data, teacher_min_year=form.teacher_min_year.data, teacher_max_year=form.teacher_max_year.data)
-        hashedpw = teach_hash(form.teacher_password.data)
+        theuser=TeacherInfo(teacher_first_name=form.teacher_first_name.data, teacher_last_name=form.teacher_last_name.data, teacher_email=form.teacher_email.data,teacher_password=form.teacher_password.data, teacher_subject=form.teacher_subject.data, teacher_examBoard=form.teacher_examBoard.data,teacher_timezone=form.teacher_timezone.data, teacher_first_language=form.teacher_first_language.data, teacher_other_lang=form.teacher_other_lang.data, teacher_min_year=form.teacher_min_year.data, teacher_max_year=form.teacher_max_year.data)
         db.session.add(theuser)
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
