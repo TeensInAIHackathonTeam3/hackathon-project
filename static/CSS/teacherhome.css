@@ -42,6 +42,15 @@ form {
 button {
 	height: 2vw;
 	width: 6vw;
+	
+}
+
+.classbutton {
+	text-align: center;
+	margin: 2vw auto;
+	background: #4FDBDB;
+	border-radius: 30px;
+	max-width: 10vw;
 }
 
 .column{

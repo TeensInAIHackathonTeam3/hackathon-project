@@ -251,6 +251,10 @@ def John_prof():
 def Jane_prof():
     return render_template('Jane_prof.html', title='Profile')
 
+@app.route('/newclass')
+def newclass():
+    return render_template('newclass.html', title='Create Class')
+
 
 if __name__ == '__main__':
     db.create_all()
