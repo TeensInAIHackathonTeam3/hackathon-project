@@ -50,7 +50,8 @@ button {
 	margin: 2vw auto;
 	background: #4FDBDB;
 	border-radius: 30px;
-	max-width: 10vw;
+	max-width: 15vw;
+	font-size: 3vw;
 }
 
 .column{
