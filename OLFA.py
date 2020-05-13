@@ -1,7 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
-from forms import StudentRegistrationForm, TeacherRegistrationForm, LoginForm
+from forms import StudentRegistrationForm, TeacherRegistrationForm, LoginForm, NewClassForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
@@ -43,7 +43,12 @@ class StudentInfo(db.Model):
     def __stud__(self):
         return f"StudentInfo('{self.student_first_name}','{self.student_last_name}', '{self.student_email}','{self.student_password}','{self.student_subject}', '{self.student_examBoard}','{self.student_timezone}','{self.student_first_language}','{self.student_other_lang}','{self.student_year_group}', '{self.student_accessibility}')"
     
-
+class Lesson(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    subject = db.Column(db.String(100), nullable=False)
+    link = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(250), nullable=False)
+    time = db.Column(db.DateTime, nullable=False)
 
 teachersaccepted= [
     {
@@ -253,7 +258,14 @@ def Jane_prof():
 
 @app.route('/newclass')
 def newclass():
-    return render_template('newclass.html', title='Create Class')
+    form = NewClassForm()
+    if form.validate_on_submit():
+        newclass=Lesson(subject=form.subject.data, link=form.link.data, description=form.description.data, time=form.time.data)
+        db.session.add(newclass)
+        db.session.commit()
+        #flash(f'Account created for {form.username.data}!', 'success')
+        
+    return render_template('newclass.html', title='Create Class', form=form)
 
 
 if __name__ == '__main__':
