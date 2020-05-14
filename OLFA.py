@@ -96,6 +96,7 @@ def studentmatchteacher(stu_subject, stu_lang, stu_otherlang, stu_year, stu_time
     for teacher in teacherlist:
         data_out.append(
             {
+                'id': teacher[1].id,
                 'name': "{} {}".format(teacher[1].teacher_first_name,teacher[1].teacher_last_name) ,
                 'subject' : abbreviation_to_name(teacher[1].teacher_subject),
                 'timezone': teacher[1].teacher_timezone.upper(),
@@ -229,8 +230,11 @@ def teacherverify():
 @app.route('/studenthome')
 def studenthome():
     teachersrecommended = hardcoded_student_match_teacher()
+    teacherdict = {}
+    for teacher in teachersrecommended:
+        teacherdict[teacher['name']] = '/' + str(teacher['id']) + '_prof'
     return render_template('studenthome.html', teachersaccepted = teachersaccepted,
-                           teachersrecommended = teachersrecommended)
+                           teachersrecommended = teachersrecommended, teacherdict=teacherdict)
 
 @app.route('/teacherhome')
 def teacherhome():
@@ -244,17 +248,12 @@ def student_search():
 def teacher_search():
     return render_template('teacher_search.html', title='Search results for other teachers')
 
-@app.route('/Bhmed_prof')
-def Bhmed_prof():
-    return render_template('Bhmed_prof.html', title='Profile')
+@app.route('/<name>')
+def teacherprofile(name):
+    teacherResult = TeacherInfo.query.get(name.split('_')[0].strip('/'))
+    return render_template('teacherprofile.html', title='Profile', teacherResult=teacherResult)
 
-@app.route('/John_prof')
-def John_prof():
-    return render_template('John_prof.html', title='Profile')
 
-@app.route('/Jane_prof')
-def Jane_prof():
-    return render_template('Jane_prof.html', title='Profile')
 
 @app.route('/newclass')
 def newclass():

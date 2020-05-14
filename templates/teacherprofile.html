@@ -2,8 +2,8 @@
 {% block content %}
 	<h1> OLFA </h1>
 	<h1> Tutors in this subject </h1>
-    <p> Bhmed Lingston </p>
-    <p> Teacher of Microbiology</p>
+    <p> {{teacherResult.teacher_first_name}} {{teacherResult.teacher_last_name}} </p>
+    <p> Teacher of {{teacherResult.teacher_subject}}</p>
     <p> Follow</p>
     <p> Add as favourite</p> <br>
 {% endblock content %}
