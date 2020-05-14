@@ -251,7 +251,8 @@ def teacher_search():
 @app.route('/<name>')
 def teacherprofile(name):
     teacherResult = TeacherInfo.query.get(name.split('_')[0].strip('/'))
-    return render_template('teacherprofile.html', title='Profile', teacherResult=teacherResult)
+    teacherSubject = abbreviation_to_name(teacherResult.teacher_subject)
+    return render_template('teacherprofile.html', title='Profile', teacherResult=teacherResult, teacherSubject=teacherSubject)
 
 
 
