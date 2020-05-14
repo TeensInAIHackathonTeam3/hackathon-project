@@ -77,4 +77,5 @@ class NewClassForm(FlaskForm):
     submit=SubmitField('Submit')
     def validate(self):
         datetimevalue = datetime.strptime(str(self.time.data), '%d/%m/%y %H:%M')
-        
+        self.time.data = datetimevalue
+        return True
