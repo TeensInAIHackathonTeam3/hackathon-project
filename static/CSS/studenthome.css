@@ -99,4 +99,7 @@ button {
 	.column h3{
 		font-size: 4vw;
 	}
+	.teacher {
+		margin: 0 auto 6px auto;
+	}
 }

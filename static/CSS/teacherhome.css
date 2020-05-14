@@ -105,4 +105,7 @@ button {
 		height: 8vw;
 		width: 17vw;
 	}
+	.item {
+		margin: 0 auto 6px auto;
+	}
 }
