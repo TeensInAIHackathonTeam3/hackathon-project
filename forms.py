@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, SelectField, DateTimeField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
+from wtforms.fields.html5 import DateTimeLocalField
 
 class TeacherRegistrationForm(FlaskForm):
     teacher_first_name= StringField('First Name', 
@@ -71,5 +72,5 @@ class NewClassForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
     link = StringField('Link', validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
-    time = DateTimeField('Time', validators=[DataRequired()])
+    time = DateTimeLocalField('Time', format="%d-%m-%Y %H:%M", validators=[DataRequired()])
     submit=SubmitField('Submit')
