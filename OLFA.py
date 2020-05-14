@@ -264,8 +264,9 @@ def newclass():
         db.session.add(newclass)
         db.session.commit()
         #flash(f'Account created for {form.username.data}!', 'success')
-        
+        return redirect(url_for('teacherhome'))
     return render_template('newclass.html', title='Create Class', form=form)
+    #return render_template('teachersignup.html', title='Sign Up', form=form)
 
 
 if __name__ == '__main__':
