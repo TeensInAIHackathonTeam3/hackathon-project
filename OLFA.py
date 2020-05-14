@@ -255,7 +255,7 @@ def teacherprofile(name):
 
 
 
-@app.route('/newclass')
+@app.route('/newclass', methods=['GET', 'POST'])
 def newclass():
     form = NewClassForm()
     if form.validate_on_submit():

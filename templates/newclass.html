@@ -5,6 +5,9 @@
 {% block content %}
 <h1 class="companyname"> OLFA - Online Learning For All </h1>
 <h1> Create A New Class</h1>
+<form method="POST" action="">
+{{ form.hidden_tag() }}
+<fieldset class="form-group">
 <div class="form-group">
 
 {{ form.subject.label(class="form-control-label") }}
@@ -68,4 +71,6 @@
 <div class="form-group">
     {{ form.submit(class="btn btn-outline-info") }}
 </div>
+</fieldset>
+</form>
 {% endblock content %}
