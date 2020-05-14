@@ -72,3 +72,4 @@ class NewClassForm(FlaskForm):
     link = StringField('Link', validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
     time = DateTimeField('Time', validators=[DataRequired()])
+    submit=SubmitField('Submit')
