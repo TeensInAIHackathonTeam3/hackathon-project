@@ -63,7 +63,8 @@ button {
 	text-align: center;
 	display: table;
 	padding: 1vw;
-	margin: 0px auto 4px auto;
+	margin-bottom: 6px;
+	width: 30vw;
 }
 
 
