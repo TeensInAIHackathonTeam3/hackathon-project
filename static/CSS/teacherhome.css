@@ -76,7 +76,7 @@ button {
 	display: table;
 	padding: 1vw;
 	margin-bottom: 6px;
-	width: 30vw;
+	width: -webkit-fill-available;
 }
 	
 @media (max-width:973px) {
@@ -94,6 +94,7 @@ button {
 		width: 100%;
 		margin-left: 3vw;
 		border-bottom: 1vw solid white;
+		margin-right: 3vw
 	}
 	.column h2{
 		font-size: 5vw;
