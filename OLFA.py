@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, url_for, flash, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from forms import StudentRegistrationForm, TeacherRegistrationForm, LoginForm, NewClassForm
 
@@ -258,13 +258,17 @@ def teacherprofile(name):
 @app.route('/newclass', methods=['GET', 'POST'])
 def newclass():
     form = NewClassForm()
-    if form.validate_on_submit():
-        newclass=Lesson(subject=form.subject.data, link=form.link.data, description=form.description.data, time=form.time.data)
-        db.session.add(newclass)
-        db.session.commit()
-        #flash(f'Account created for {form.username.data}!', 'success')
-        return redirect(url_for('teacherhome'))
-    return render_template('newclass.html', title='Create Class', form=form)
+    warning = ''
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            newclass=Lesson(subject=form.subject.data, link=form.link.data, description=form.description.data, time=form.time.data)
+            db.session.add(newclass)
+            db.session.commit()
+            #flash(f'Account created for {form.username.data}!', 'success')
+            return redirect(url_for('teacherhome'))
+        else:
+            warning = 'invalid value'
+    return render_template('newclass.html', title='Create Class', form=form, warning=warning)
     #return render_template('teachersignup.html', title='Sign Up', form=form)
 
 
