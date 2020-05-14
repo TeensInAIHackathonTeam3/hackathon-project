@@ -3,7 +3,7 @@
 	<h1> OLFA </h1>
 	<h1> Tutors in this subject </h1>
     <p> {{teacherResult.teacher_first_name}} {{teacherResult.teacher_last_name}} </p>
-    <p> Teacher of {{teacherResult.teacher_subject}}</p>
+    <p> Teacher of {{abbreviation_to_name(teacherResult.teacher_subject)}}</p>
     <p> Follow</p>
     <p> Add as favourite</p> <br>
 {% endblock content %}
