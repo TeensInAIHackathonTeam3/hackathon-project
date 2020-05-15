@@ -70,15 +70,17 @@ class LoginForm(FlaskForm):
     submit=SubmitField('Login')
 
 class NewClassForm(FlaskForm):
-    subject = StringField('Subject', validators=[DataRequired()])
-    link = StringField('Link', validators=[DataRequired()])
-    description = StringField('Description', validators=[DataRequired()])
-    time = StringField('dd/mm/yyyy HH:MM', validators=[DataRequired()])
+    #all of these would normally have validators=[DataRequired()]
+    subject = StringField('Subject')
+    link = StringField('Link')
+    description = StringField('Description')
+    time = StringField('dd/mm/yyyy HH:MM')
     submit=SubmitField('Submit')
-    def validate(self):
-        try:
-            datetimevalue = datetime.datetime.strptime(str(self.time.data), '%d/%m/%Y %H:%M')
-            self.time.data = datetimevalue
-            return True
-        except ValueError:
-            return False
+    #COMMENTED VALIDATION OUT FOR DEMO
+##    def validate(self):
+##        try:
+##            datetimevalue = datetime.datetime.strptime(str(self.time.data), '%d/%m/%Y %H:%M')
+##            self.time.data = datetimevalue
+##            return True
+##        except ValueError:
+##            return False
