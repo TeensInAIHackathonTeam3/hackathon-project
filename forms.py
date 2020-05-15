@@ -74,13 +74,13 @@ class NewClassForm(FlaskForm):
     subject = StringField('Subject')
     link = StringField('Link')
     description = StringField('Description')
-    time = StringField('dd/mm/yyyy HH:MM')
+    time = StringField('dd/mm/yyyy HH:MM', validators=[DataRequired()])
     submit=SubmitField('Submit')
-    #COMMENTED VALIDATION OUT FOR DEMO
-##    def validate(self):
-##        try:
-##            datetimevalue = datetime.datetime.strptime(str(self.time.data), '%d/%m/%Y %H:%M')
-##            self.time.data = datetimevalue
-##            return True
-##        except ValueError:
-##            return False
+    
+    def validate(self):
+        try:
+            datetimevalue = datetime.datetime.strptime(str(self.time.data), '%d/%m/%Y %H:%M')
+            self.time.data = datetimevalue
+            return True
+        except ValueError:
+            return False
