@@ -1,5 +1,7 @@
 This is the Github repository for OLFA: Online Learning For All, created as part of the Teens in AI Covid 19 Hackathon.
 
+See also: https://girlsinai.co.uk/projects/round-2-olfa-online-learning-for-all-team-3/
+
 Only follow the installation instructions below if you can't access the site at: https://ol-fa.herokuapp.com
 
 Installation Instructions:
